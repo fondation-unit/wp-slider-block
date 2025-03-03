@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "create-block/slider",
+	"version": "0.1.0",
+	"title": "Slider",
+	"category": "format",
+	"icon": "dashicons-format-gallery",
+	"description": "Slider block.",
+	"example": {},
+	"attributes": {
+		"fieldGroups": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object",
+				"properties": {
+					"title": {
+						"type": "string"
+					},
+					"caption": {
+						"type": "string"
+					},
+					"mediaId": {
+						"type": "number"
+					},
+					"mediaUrl": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	},
+	"supports": {
+		"html": false,
+		"interactivity": true
+	},
+	"textdomain": "slider",
+	"editorScript": "file:./index.ts",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScriptModule": "file:./view.ts"
+}
