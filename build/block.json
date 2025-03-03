@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "title": "Slider",
   "category": "format",
-  "icon": "dashicons-format-gallery",
+  "icon": "format-gallery",
   "description": "Slider block.",
   "example": {},
   "attributes": {
