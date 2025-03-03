@@ -57,13 +57,13 @@ export default function Edit({ attributes, setAttributes }: { attributes: BlockA
     <>
       <InspectorControls>
         <PanelBody title={`${__('Settings', 'slider')}`}>
-					{/* Title */}
+          {/* Title */}
           <TextControl
             label={__('Title', 'slider')}
             value={title || ''}
             onChange={(value: string) => updateTitle(value)}
           />
-					{/* Caption */}
+          {/* Caption */}
           <TextControl
             label={__('Caption', 'slider')}
             value={caption || ''}
@@ -74,7 +74,7 @@ export default function Edit({ attributes, setAttributes }: { attributes: BlockA
             <MediaUpload
               onSelect={updateMedia}
               allowedTypes={['image']}
-							gallery // Enable gallery mode
+              gallery // Enable gallery mode
               multiple // Enable multiple images selection
               value={mediaId}
               render={({ open }) => (

@@ -6,12 +6,11 @@
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
+
 $title = $attributes['title'] ?? '';
 $caption = $attributes['caption'] ?? '';
 $mediaIDs = $attributes['mediaId'] ?? [];
 $mediaUrls = $attributes['mediaUrl'] ?? [];
-
-print_r($attributes);
 
 if (!empty($mediaIDs) && !empty($mediaUrls)) : ?>
 	<div class="slider-block-wrapper">
