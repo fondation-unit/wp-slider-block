@@ -34,6 +34,6 @@ add_action('init', 'create_block_slider_block_init');
  * Block translation.
  */
 function slider_block_load_textdomain() {
-	load_plugin_textdomain('slider_block', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+	load_plugin_textdomain('slider', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
 add_action('init', 'slider_block_load_textdomain');
