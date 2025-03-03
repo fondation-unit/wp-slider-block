@@ -30,7 +30,9 @@ function create_block_slider_block_init() {
 }
 add_action('init', 'create_block_slider_block_init');
 
-
+/**
+ * Block translation.
+ */
 function slider_block_load_textdomain() {
 	load_plugin_textdomain('slider_block', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
