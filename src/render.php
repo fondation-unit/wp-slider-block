@@ -7,19 +7,18 @@
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 
-$fieldGroups = $attributes['fieldGroups'] ?? [];
+$title = $attributes['title'] ?? '';
+$caption = $attributes['caption'] ?? '';
+$mediaIDs = $attributes['mediaId'] ?? [];
+$mediaUrls = $attributes['mediaUrl'] ?? [];
 
-if (!empty($fieldGroups)) : ?>
+if (!empty($mediaIDs) && !empty($mediaUrls)) : ?>
 	<div class="slider-block-wrapper">
 		<div class="slider-block-entries">
-			<?php foreach ($fieldGroups as $group) :
-				$spreadsheetId = $group['spreadsheetId'] ?? '';
-				$sheetName = $group['sheetName'] ?? '';
-				$mediaUrl = $group['mediaUrl'] ?? ''; ?>
-
+			<?php foreach ($mediaUrls as $url) : ?>
 				<div class="slider-block-entry">
-					<?php if (!empty($mediaUrl)) : ?>
-						<img src="<?php echo esc_url($mediaUrl); ?>" alt="<?php echo esc_attr($sheetName); ?>" />
+					<?php if (!empty($url)) : ?>
+						<img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($title); ?>" />
 					<?php endif; ?>
 				</div>
 			<?php endforeach; ?>

@@ -1,10 +1,8 @@
 interface BlockAttributes {
-    fieldGroups: {
-		title: string;
-		caption: string;
-		mediaId: number;
-		mediaUrl: string
-	}[];
+	title: string;
+	caption: string;
+	mediaId: number[];
+	mediaUrl: string[];
 }
 
 interface BlockMetadata {

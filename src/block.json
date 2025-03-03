@@ -9,25 +9,26 @@
 	"description": "Slider block.",
 	"example": {},
 	"attributes": {
-		"fieldGroups": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"caption": {
+			"type": "string",
+			"default": ""
+		},
+		"mediaId": {
 			"type": "array",
 			"default": [],
 			"items": {
-				"type": "object",
-				"properties": {
-					"title": {
-						"type": "string"
-					},
-					"caption": {
-						"type": "string"
-					},
-					"mediaId": {
-						"type": "number"
-					},
-					"mediaUrl": {
-						"type": "string"
-					}
-				}
+				"type": "number"
+			}
+		},
+		"mediaUrl": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "string"
 			}
 		}
 	},
