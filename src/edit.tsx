@@ -80,9 +80,9 @@ export default function Edit({ attributes, setAttributes }: { attributes: BlockA
               render={({ open }) => (
                 <div>
                   {mediaUrl.length > 0 ? (
-                    <div className="media-gallery">
+                    <div className="slider-bloc__media-gallery">
                       {mediaUrl.map((url, index) => (
-                        <div key={index} className="media-item">
+                        <div key={index} className="slider-bloc__media-item">
                           <img src={url} style={{ maxWidth: '100%', height: 'auto' }} alt={`Image ${index + 1}`} />
                         </div>
                       ))}
@@ -99,17 +99,22 @@ export default function Edit({ attributes, setAttributes }: { attributes: BlockA
           </MediaUploadCheck>
         </PanelBody>
       </InspectorControls>
+
       {/* Render the block in the editor */}
-      <div {...blockProps} className={`${blockProps.className} slider-block-wrapper`}>
-        <h4>{__('Gallery Block', 'slider')}</h4>
-        {/* Render the gallery in the editor */}
-        <div className="gallery">
+      <div {...blockProps} className={`${blockProps.className} slider-block`}>
+				<h4 className="slider-block__title">
+					{title ? title : __('Slider', 'slider')}
+				</h4>
+        <div className="slider-block__gallery">
           {mediaUrl.map((url, index) => (
-            <div key={index} className="gallery-item">
-              <img src={url} alt={`Gallery Item ${index + 1}`} />
+            <div key={index} className="slider-block__gallery-item">
+              <img src={url} alt={`Image ${index + 1}`} />
             </div>
           ))}
         </div>
+				<div className="slider-block__caption">
+					{caption ? caption : __('Caption', 'slider')}
+				</div>
       </div>
     </>
   );

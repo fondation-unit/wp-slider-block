@@ -1,13 +1,17 @@
 /**
  * The following styles get applied both on the front of your site
  * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
  */
 
-.slider-block-wrapper {
+.slider-block {
+  &__gallery {
 	display: flex;
-	flex-flow: row nowrap;
-
-	.slider-block {}
+	flex-direction: row;
+	&-item {
+	  img{
+		max-width: 300px;
+		height: auto;
+	  }
+	}
+  }
 }

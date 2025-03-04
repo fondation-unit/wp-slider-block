@@ -13,10 +13,10 @@ $mediaIDs = $attributes['mediaId'] ?? [];
 $mediaUrls = $attributes['mediaUrl'] ?? [];
 
 if (!empty($mediaIDs) && !empty($mediaUrls)) : ?>
-	<div class="slider-block-wrapper">
-		<div class="slider-block-entries">
+	<div class="slider-block">
+		<div class="slider-block__gallery">
 			<?php foreach ($mediaUrls as $url) : ?>
-				<div class="slider-block-entry">
+				<div class="slider-block__gallery-item">
 					<?php if (!empty($url)) : ?>
 						<img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($title); ?>" />
 					<?php endif; ?>
