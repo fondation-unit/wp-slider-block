@@ -5,13 +5,13 @@
 
 .slider-block {
   &__gallery {
-	display: flex;
-	flex-direction: row;
-	&-item {
-	  img{
-		max-width: 300px;
-		height: auto;
-	  }
-	}
+    display: flex;
+    flex-direction: row;
+    &-item {
+      img {
+        max-width: 300px;
+        height: auto;
+      }
+    }
   }
 }

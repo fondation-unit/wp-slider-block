@@ -15,7 +15,7 @@
  */
 
 if (! defined('ABSPATH')) {
-	exit; // Exit if accessed directly.
+    exit; // Exit if accessed directly.
 }
 
 /**
@@ -26,7 +26,7 @@ if (! defined('ABSPATH')) {
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function create_block_slider_block_init() {
-	register_block_type(__DIR__ . '/build');
+    register_block_type(__DIR__ . '/build');
 }
 add_action('init', 'create_block_slider_block_init');
 
@@ -34,6 +34,6 @@ add_action('init', 'create_block_slider_block_init');
  * Block translation.
  */
 function slider_block_load_textdomain() {
-	load_plugin_textdomain('slider', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+    load_plugin_textdomain('slider', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
 add_action('init', 'slider_block_load_textdomain');

@@ -99,19 +99,19 @@ function Edit({
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Settings', 'slider')}`,
+        title: `${(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Settings", "slider")}`,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title', 'slider'),
-          value: title || '',
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Title", "slider"),
+          value: title || "",
           onChange: value => updateTitle(value)
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Caption', 'slider'),
-          value: caption || '',
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Caption", "slider"),
+          value: caption || "",
           onChange: value => updateCaption(value)
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
             onSelect: updateMedia,
-            allowedTypes: ['image'],
+            allowedTypes: ["image"],
             gallery: true // Enable gallery mode
             ,
             multiple: true // Enable multiple images selection
@@ -127,18 +127,18 @@ function Edit({
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
                     src: url,
                     style: {
-                      maxWidth: '100%',
-                      height: 'auto'
+                      maxWidth: "100%",
+                      height: "auto"
                     },
                     alt: `Image ${index + 1}`
                   })
                 }, index))
               }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('No media selected', 'slider')
+                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("No media selected", "slider")
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
                 variant: "secondary",
                 onClick: open,
-                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select media', 'slider')
+                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Select media", "slider")
               })]
             })
           })
@@ -149,7 +149,7 @@ function Edit({
       className: `${blockProps.className} slider-block`,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
         className: "slider-block__title",
-        children: title ? title : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Slider', 'slider')
+        children: title ? title : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Slider", "slider")
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "slider-block__gallery",
         children: mediaUrl.map((url, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -161,7 +161,7 @@ function Edit({
         }, index))
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "slider-block__caption",
-        children: caption ? caption : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Caption', 'slider')
+        children: caption ? caption : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Caption", "slider")
       })]
     })]
   });
