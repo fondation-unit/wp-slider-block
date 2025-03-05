@@ -2,6 +2,11 @@
 
 ## Development
 
+### Getting started
+
+- [https://developer.wordpress.org/block-editor/getting-started/tutorial/](https://developer.wordpress.org/block-editor/getting-started/tutorial/)
+- [https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/core-concepts/using-typescript/](https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/core-concepts/using-typescript/)
+
 ### Block attributes
 
 To use new attributes in the block's editor, they must be declared in the [src/block.json](./src/block.json) file.
@@ -40,10 +45,12 @@ Set the block icon in `src/block.json` from an existing dashicon
 [https://developer.wordpress.org/resource/dashicons/](https://developer.wordpress.org/resource/dashicons/):
 
 ```json
-	...
-	"category": "format",
-	"icon": "format-gallery",
-	...
+{
+  // ...
+  "category": "format",
+  "icon": "format-gallery"
+  // ...
+}
 ```
 
 ### Translations
