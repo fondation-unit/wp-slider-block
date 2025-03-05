@@ -6,24 +6,25 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/slider\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-04T08:47:02+00:00\n"
+"POT-Creation-Date: 2025-03-05T15:56:08+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: slider\n"
 
 #. Plugin Name of the plugin
 #: slider.php
-#: build/index.js:152
+#: build/index.js:153
 msgid "Slider"
 msgstr ""
 
 #. Description of the plugin
 #: slider.php
 msgid "Slider block."
-msgstr "Bloc slider"
+msgstr ""
 
 #. Author of the plugin
 #: slider.php
@@ -32,31 +33,21 @@ msgstr ""
 
 #: build/index.js:102
 msgid "Settings"
-msgstr "Paramètres"
+msgstr "Réglages"
 
 #: build/index.js:104
 msgid "Title"
 msgstr "Titre"
 
 #: build/index.js:108
-#: build/index.js:164
+#: build/index.js:165
 msgid "Caption"
 msgstr "Légende"
 
-#: build/index.js:137
+#: build/index.js:138
 msgid "No media selected"
-msgstr "Aucun media sélectionné"
-
-#: build/index.js:141
-msgid "Select media"
-msgstr "Sélectionner un media"
-
-#: build/block.json
-msgctxt "block title"
-msgid "Slider"
 msgstr ""
 
-#: build/block.json
-msgctxt "block description"
-msgid "Slider block."
+#: build/index.js:142
+msgid "Select media"
 msgstr ""

@@ -33,11 +33,11 @@ add_action('init', 'create_block_slider_block_init');
 /**
  * Block translation.
  */
-function slider_block_load_textdomain() {
+function slider_block_script_translations() {
     wp_set_script_translations(
-        'create-block-slider-editor-script', // The script handle (see src/block.json)
-        'slider_block', // The text domain
-        plugin_dir_path(__FILE__) . '/languages/'
+        'create-block-slider-editor-script',
+        'slider',
+        plugin_dir_path(__FILE__) . 'languages'
     );
 }
-add_action('init', 'slider_block_load_textdomain');
+add_action('init', 'slider_block_script_translations');

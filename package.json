@@ -12,6 +12,7 @@
     "lint:js": "wp-scripts lint-js",
     "packages-update": "wp-scripts packages-update",
     "plugin-zip": "wp-scripts plugin-zip",
+    "make-pot": "wp i18n make-pot . languages/slider-fr_FR.pot --slug=slider --domain=slider_block --exclude=node_modules",
     "start": "wp-scripts start --experimental-modules --webpack-copy-php"
   },
   "files": [

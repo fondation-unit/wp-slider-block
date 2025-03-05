@@ -12,11 +12,6 @@ $caption = $attributes['caption'] ?? '';
 $mediaIDs = $attributes['mediaId'] ?? [];
 $mediaUrls = $attributes['mediaUrl'] ?? [];
 
-$data = array('loop' => 5);
-add_action('wp_footer', function () use ($data) {
-    printf('<script type="text/javascript">var sliderData = %s</script>', json_encode($data));
-});
-
 if (!empty($mediaIDs) && !empty($mediaUrls)) : ?>
     <div><?php echo trim(esc_html($title)); ?></div>
     <!-- Swiper -->
@@ -38,3 +33,10 @@ if (!empty($mediaIDs) && !empty($mediaUrls)) : ?>
         <div class="swiper-scrollbar"></div>
     </div>
 <?php endif;
+
+/*
+$data = array('loop' => 5);
+add_action('wp_footer', function () use ($data) {
+    printf('<script type="text/javascript">var sliderData = %s</script>', json_encode($data));
+});
+*/

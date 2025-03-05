@@ -55,9 +55,9 @@ Set the block icon in `src/block.json` from an existing dashicon
 
 ### Translations
 
-Create the .po file using WP-CLI
+Create the .po file using WP-CLI:
 
-```
+```sh
 wp i18n make-pot . languages/slider_block-fr_FR.po
 ```
 
@@ -65,7 +65,12 @@ Create the .mo file:
 
 [wp i18n make-mo](https://developer.wordpress.org/cli/commands/i18n/make-mo/)
 
+```sh
+wp i18n make-mo ./languages
 ```
-cd languages/
-wp i18n make-mo .
+
+Create the .json file for the scripts:
+
+```sh
+wp i18n make-json languages/ --no-purge
 ```

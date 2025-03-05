@@ -1,0 +1,17 @@
+{
+  "translation-revision-date": "2025-03-05T15:56:08+00:00",
+  "generator": "WP-CLI/2.10.0",
+  "source": "build/index.js",
+  "domain": "messages",
+  "locale_data": {
+    "messages": {
+      "": { "domain": "messages", "lang": "fr", "plural-forms": "nplurals=2; plural=(n != 1);" },
+      "Slider": [""],
+      "Settings": ["R\u00e9glages"],
+      "Title": ["Titre"],
+      "Caption": ["L\u00e9gende"],
+      "No media selected": [""],
+      "Select media": [""]
+    }
+  }
+}
