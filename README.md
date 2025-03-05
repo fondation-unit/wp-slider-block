@@ -2,6 +2,16 @@
 
 ## Development
 
+### Block attributes
+
+To use new attributes in the block's editor, they must be declared in the [src/block.json](./src/block.json) file.
+
+```json
+"attributes": {
+  // ...
+}
+```
+
 ### MediaUpload
 
 [https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/media-upload/README.md](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/media-upload/README.md)

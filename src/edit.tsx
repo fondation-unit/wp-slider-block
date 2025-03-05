@@ -79,7 +79,7 @@ export default function Edit({
           <MediaUploadCheck>
             <MediaUpload
               onSelect={updateMedia}
-              allowedTypes={["image"]}
+              allowedTypes={["image"]} // Enable images only
               gallery // Enable gallery mode
               multiple // Enable multiple images selection
               value={mediaId}

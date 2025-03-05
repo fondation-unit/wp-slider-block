@@ -36,7 +36,7 @@
     "html": false,
     "interactivity": true
   },
-  "textdomain": "slider",
+  "textdomain": "slider_block",
   "editorScript": "file:./index.ts",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
