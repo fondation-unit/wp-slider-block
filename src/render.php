@@ -13,6 +13,8 @@ $mediaIDs = $attributes['mediaId'] ?? [];
 $mediaUrls = $attributes['mediaUrl'] ?? [];
 
 if (!empty($mediaIDs) && !empty($mediaUrls)) : ?>
+    <div><?php echo trim(esc_html($title)); ?></div>
+    <!-- Swiper -->
     <div class="slider-block swiper">
         <div class="slider-block__gallery swiper-wrapper">
             <?php foreach ($mediaUrls as $url) : ?>
@@ -23,7 +25,8 @@ if (!empty($mediaIDs) && !empty($mediaUrls)) : ?>
                 </div>
             <?php endforeach; ?>
         </div>
-
+        <div><?php echo trim(esc_html($caption)); ?></div>
+        <!-- Swiper options -->
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
