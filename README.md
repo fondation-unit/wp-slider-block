@@ -58,8 +58,10 @@ Set the block icon in `src/block.json` from an existing dashicon
 Create the .po file using WP-CLI:
 
 ```sh
-wp i18n make-pot . languages/slider_block-fr_FR.po
+wp i18n make-pot . languages/slider-fr_FR.po
 ```
+
+The prefix name of the .po file must match the language domain of the plugin.
 
 Create the .mo file:
 
@@ -73,4 +75,14 @@ Create the .json file for the scripts:
 
 ```sh
 wp i18n make-json languages/ --no-purge
+```
+
+The languages file are loaded during the init callback:
+
+```php
+wp_set_script_translations(
+    'create-block-slider-editor-script',
+    'slider',
+    plugin_dir_path(__FILE__) . 'languages'
+);
 ```
