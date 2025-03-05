@@ -12,6 +12,24 @@ To use new attributes in the block's editor, they must be declared in the [src/b
 }
 ```
 
+Once registered, the attributes can be added to the `BlockAttributes` interface in [src/types/block.d.ts](./src/types/block.d.ts).
+
+Since the interface is passed to the `Edit` function, you can decompose the new attributes directly within the function, like so:
+
+```ts
+export default function Edit({
+  attributes,
+  setAttributes
+}: {
+  attributes: BlockAttributes;
+  setAttributes: (attributes: BlockAttributes) => void;
+}) {
+  const blockProps = useBlockProps();
+  const { title, caption, mediaId, mediaUrl } = attributes;
+
+  // ...
+```
+
 ### MediaUpload
 
 [https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/media-upload/README.md](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/media-upload/README.md)
