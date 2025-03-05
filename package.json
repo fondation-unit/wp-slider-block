@@ -24,6 +24,7 @@
     "@types/wordpress__components": "^23.8.0",
     "@wordpress/interactivity": "^6.18.0",
     "@wordpress/scripts": "^30.11.0",
+    "swiper": "^11.2.5",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1"
   }

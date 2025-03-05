@@ -4,13 +4,31 @@
  */
 
 .slider-block {
+  overflow-x: hidden;
   &__gallery {
     display: flex;
     flex-direction: row;
     &-item {
       img {
-        max-width: 300px;
+        max-width: 500px;
         height: auto;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .swiper-pagination-bullet {
+      border-radius: 100%;
+      width: 10px;
+      height: 10px;
+      background: black;
+      opacity: 0.35;
+      margin: 0 0.25em;
+      &-active {
+        opacity: 1;
       }
     }
   }
