@@ -1,11 +1,11 @@
 # WordPress Slider block
 
-## Development
-
-### Getting started
+## Resources
 
 - [https://developer.wordpress.org/block-editor/getting-started/tutorial/](https://developer.wordpress.org/block-editor/getting-started/tutorial/)
 - [https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/core-concepts/using-typescript/](https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/core-concepts/using-typescript/)
+
+## Development
 
 ### Block attributes
 
@@ -35,9 +35,11 @@ export default function Edit({
   // ...
 ```
 
-### MediaUpload
+#### Attributes documentation
 
-[https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/media-upload/README.md](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/media-upload/README.md)
+- [TextControl](https://github.com/WordPress/gutenberg/tree/trunk/packages/components/src/text-control/README.md)
+- [CheckboxControl](https://github.com/WordPress/gutenberg/blob/trunk/packages/components/src/checkbox-control/README.md)
+- [MediaUpload](https://github.com/WordPress/gutenberg/blob/trunk/packages/block-editor/src/components/media-upload/README.md)
 
 ### Dashicons
 
@@ -63,9 +65,7 @@ wp i18n make-pot . languages/slider-fr_FR.po
 
 The prefix name of the .po file must match the language domain of the plugin.
 
-Create the .mo file:
-
-[wp i18n make-mo](https://developer.wordpress.org/cli/commands/i18n/make-mo/)
+Create the .mo file ([see: https://developer.wordpress.org/cli/commands/i18n/make-mo/](https://developer.wordpress.org/cli/commands/i18n/make-mo/)):
 
 ```sh
 wp i18n make-mo ./languages
@@ -76,6 +76,10 @@ Create the .json file for the scripts:
 ```sh
 wp i18n make-json languages/ --no-purge
 ```
+
+> [!IMPORTANT]
+> All the language files must be named with a prefix matching the text-domain value of the block.
+> In our case: `"textdomain": "slider"`
 
 The languages file are loaded during the init callback:
 

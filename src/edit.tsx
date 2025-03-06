@@ -12,7 +12,7 @@ import { __ } from "@wordpress/i18n";
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { InspectorControls, useBlockProps, MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
-import { PanelBody, TextControl, Button } from "@wordpress/components";
+import { Button, CheckboxControl, PanelBody, TextControl } from "@wordpress/components";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -38,17 +38,21 @@ export default function Edit({
   setAttributes: (attributes: BlockAttributes) => void;
 }) {
   const blockProps = useBlockProps();
-  const { title, caption, mediaId, mediaUrl } = attributes;
+  const { title, caption, loop, mediaId, mediaUrl } = attributes;
 
-  const updateTitle = (value: string) => {
+  const setTitle = (value: string) => {
     setAttributes({ ...attributes, title: value });
   };
 
-  const updateCaption = (value: string) => {
+  const setCaption = (value: string) => {
     setAttributes({ ...attributes, caption: value });
   };
 
-  const updateMedia = (selectedMedia: any[]) => {
+  const setLoop = (value: boolean) => {
+    setAttributes({ ...attributes, loop: value });
+  };
+
+  const setMedia = (selectedMedia: any[]) => {
     const newMediaId = selectedMedia.map((m: any) => m.id);
     const newMediaUrl = selectedMedia.map((m: any) => m.url);
 
@@ -67,18 +71,26 @@ export default function Edit({
           <TextControl
             label={__("Title", "slider")}
             value={title || ""}
-            onChange={(value: string) => updateTitle(value)}
+            onChange={(value: string) => setTitle(value)}
           />
           {/* Caption */}
           <TextControl
             label={__("Caption", "slider")}
             value={caption || ""}
-            onChange={(value: string) => updateCaption(value)}
+            onChange={(value: string) => setCaption(value)}
+          />
+          {/* Loop */}
+          <CheckboxControl
+            __nextHasNoMarginBottom
+            label={__("Loop", "slider")}
+            help={__("Check this to enable continuous loop mode", "slider")}
+            checked={loop}
+            onChange={setLoop}
           />
           {/* Media Upload */}
           <MediaUploadCheck>
             <MediaUpload
-              onSelect={updateMedia}
+              onSelect={setMedia}
               allowedTypes={["image"]} // Enable images only
               gallery // Enable gallery mode
               multiple // Enable multiple images selection

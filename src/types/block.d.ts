@@ -1,6 +1,7 @@
 interface BlockAttributes {
   title: string;
   caption: string;
+  loop: boolean;
   mediaId: number[];
   mediaUrl: string[];
 }

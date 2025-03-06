@@ -7,25 +7,34 @@
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 
-$title = $attributes['title'] ?? '';
-$caption = $attributes['caption'] ?? '';
-$mediaIDs = $attributes['mediaId'] ?? [];
-$mediaUrls = $attributes['mediaUrl'] ?? [];
+$data = array(
+    'title' => $attributes['title'] ?? '',
+    'caption' => $attributes['caption'] ?? '',
+    'loop' => $attributes['loop'] ?? false,
+    'mediaIDs' => $attributes['mediaId'] ?? [],
+    'mediaURLs' => $attributes['mediaUrl'] ?? [],
+);
 
-if (!empty($mediaIDs) && !empty($mediaUrls)) : ?>
-    <div><?php echo trim(esc_html($title)); ?></div>
+$settings = array(
+    'title' => $data['title'],
+    'caption' => $data['caption'],
+    'loop' => $data['loop'],
+);
+
+if (!empty($data['mediaIDs']) && !empty($data['mediaURLs'])) : ?>
+    <div><?php echo trim(esc_html($data['title'])); ?></div>
     <!-- Swiper -->
-    <div class="slider-block swiper">
+    <div class="slider-block swiper" data-slider="<?php echo json_encode($settings); ?>">
         <div class="slider-block__gallery swiper-wrapper">
-            <?php foreach ($mediaUrls as $url) : ?>
+            <?php foreach ($data['mediaURLs'] as $url) : ?>
                 <div class="slider-block__gallery-item swiper-slide">
                     <?php if (!empty($url)) : ?>
-                        <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($title); ?>" />
+                        <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($data['title']); ?>" />
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>
         </div>
-        <div><?php echo trim(esc_html($caption)); ?></div>
+        <div><?php echo trim(esc_html($data['caption'])); ?></div>
         <!-- Swiper options -->
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -33,10 +42,3 @@ if (!empty($mediaIDs) && !empty($mediaUrls)) : ?>
         <div class="swiper-scrollbar"></div>
     </div>
 <?php endif;
-
-/*
-$data = array('loop' => 5);
-add_action('wp_footer', function () use ($data) {
-    printf('<script type="text/javascript">var sliderData = %s</script>', json_encode($data));
-});
-*/
