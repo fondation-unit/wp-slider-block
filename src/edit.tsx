@@ -120,7 +120,7 @@ export default function Edit({
 
       {/* Render the block in the editor */}
       <div {...blockProps} className={`${blockProps.className} slider-block`}>
-        <h4 className="slider-block__title">{title ? title : __("Slider", "slider")}</h4>
+        <div className="slider-block__title">{title ? title : __("Slider", "slider")}</div>
         <div className="slider-block__gallery">
           {mediaUrl.map((url, index) => (
             <div key={index} className="slider-block__gallery-item">

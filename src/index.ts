@@ -18,6 +18,7 @@ import "./style.scss";
  * Internal dependencies
  */
 import Edit from "./edit";
+import Save from "./save";
 import metadata from "./block.json";
 
 /**
@@ -27,7 +28,11 @@ import metadata from "./block.json";
  */
 registerBlockType(metadata.name, {
   /**
-   * @see ./edit.js
+   * @see ./edit.tsx
    */
-  edit: Edit
+  edit: Edit,
+  /**
+   * @see ./save.tsx
+   */
+  save: Save
 });

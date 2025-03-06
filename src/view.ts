@@ -28,18 +28,18 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const sliderDiv: HTMLElement | null = document.querySelector(".slider-block.swiper");
+  const swiperElements: NodeListOf<HTMLElement> = document.querySelectorAll(".slider-block.swiper");
 
-  if (sliderDiv) {
+  swiperElements.forEach((element) => {
     // Access the data attributes and parse it.
-    const sliderData = sliderDiv.dataset.slider as string;
-    const settings = JSON.parse(sliderData);
+    const sliderLoop = element.dataset.sliderLoop as string;
+    const loop = JSON.parse(sliderLoop);
 
     // Initialize swiper
-    new Swiper(".swiper", {
+    new Swiper(element, {
       modules: [Navigation, Pagination],
       direction: "horizontal",
-      loop: settings.loop || false,
+      loop: loop || false,
       grabCursor: true,
       slidesPerView: 2,
       spaceBetween: 10,
@@ -52,5 +52,5 @@ document.addEventListener("DOMContentLoaded", () => {
         prevEl: ".swiper-button-prev"
       }
     });
-  }
+  });
 });
