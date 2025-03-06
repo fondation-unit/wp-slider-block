@@ -90,3 +90,9 @@ wp_set_script_translations(
     plugin_dir_path(__FILE__) . 'languages'
 );
 ```
+
+The process is covered by 2 NPM commands:
+
+- Step 1: run `npm run make-pot`
+- Step 2: do the translations in the `languages/slider-fr_FR.po` file
+- Step 3: run `npm run make-mo`
