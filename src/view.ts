@@ -27,19 +27,30 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-new Swiper(".swiper", {
-  modules: [Navigation, Pagination],
-  direction: "horizontal",
-  loop: false,
-  grabCursor: true,
-  slidesPerView: 2,
-  spaceBetween: 10,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
+document.addEventListener("DOMContentLoaded", () => {
+  const sliderDiv: HTMLElement | null = document.querySelector(".slider-block.swiper");
+
+  if (sliderDiv) {
+    // Access the data attributes and parse it.
+    const sliderData = sliderDiv.dataset.slider as string;
+    const settings = JSON.parse(sliderData);
+
+    // Initialize swiper
+    new Swiper(".swiper", {
+      modules: [Navigation, Pagination],
+      direction: "horizontal",
+      loop: settings.loop || false,
+      grabCursor: true,
+      slidesPerView: 2,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    });
   }
 });

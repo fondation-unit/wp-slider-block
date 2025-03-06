@@ -15,7 +15,8 @@ $data = array(
     'mediaURLs' => $attributes['mediaUrl'] ?? [],
 );
 
-$settings = array(
+// The data that must be passed to the view.
+$view_data = array(
     'title' => $data['title'],
     'caption' => $data['caption'],
     'loop' => $data['loop'],
@@ -24,7 +25,7 @@ $settings = array(
 if (!empty($data['mediaIDs']) && !empty($data['mediaURLs'])) : ?>
     <div><?php echo trim(esc_html($data['title'])); ?></div>
     <!-- Swiper -->
-    <div class="slider-block swiper" data-slider="<?php echo json_encode($settings); ?>">
+    <div class="slider-block swiper" data-slider="<?php echo htmlspecialchars(json_encode($view_data)); ?>">
         <div class="slider-block__gallery swiper-wrapper">
             <?php foreach ($data['mediaURLs'] as $url) : ?>
                 <div class="slider-block__gallery-item swiper-slide">
