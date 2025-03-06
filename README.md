@@ -5,6 +5,19 @@
 - [https://developer.wordpress.org/block-editor/getting-started/tutorial/](https://developer.wordpress.org/block-editor/getting-started/tutorial/)
 - [https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/core-concepts/using-typescript/](https://developer.wordpress.org/block-editor/reference-guides/interactivity-api/core-concepts/using-typescript/)
 
+## Architecture
+
+This block uses static rendering. Thus, we don't rely on render.php to be responsible of the display.
+
+```php
+echo wp_kses_post($content);
+```
+
+It's the `save` function that stores the contents of the block in the database.
+So it's the [src/save.tsx](./src/save.tsx) that is responsible of producing the static rendering.
+
+Since we need to initialize swiper in the client, we rely on [src/view.ts](./src/view.ts) to do the business.
+
 ## Development
 
 ### Block attributes

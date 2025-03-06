@@ -13,6 +13,9 @@ import { __ } from "@wordpress/i18n";
  */
 import { InspectorControls, useBlockProps, MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
 import { Button, CheckboxControl, PanelBody, TextControl } from "@wordpress/components";
+import { useEffect, useRef } from "react";
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -21,6 +24,9 @@ import { Button, CheckboxControl, PanelBody, TextControl } from "@wordpress/comp
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import "./editor.scss";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -39,6 +45,48 @@ export default function Edit({
 }) {
   const blockProps = useBlockProps();
   const { title, caption, loop, mediaId, mediaUrl } = attributes;
+  // Create a ref for the slider-block div, to be able to initialize swiper.
+  const sliderBlockRef = useRef<HTMLDivElement | null>(null);
+
+  /**
+   * The useEffect hook is used to perform side effects when the component mounts.
+   * List of dependencies that trigger the effect on change: title, caption, loop, mediaUrl.
+   * This hook is used to perform the swiper initialization, based on the presence of the sliderBlockRef DOM element.
+   *
+   * @returns {void}
+   */
+  useEffect(() => {
+    // Ensure DOM is ready using a timeout.
+    const timeout = setTimeout(() => {
+      if (!sliderBlockRef.current) {
+        return; // Swiper element not found.
+      }
+
+      const sliderElement = sliderBlockRef.current.querySelector(".swiper") as HTMLElement;
+
+      if (!sliderElement) {
+        return; // Swiper element not found inside sliderBlockRef.
+      }
+      new Swiper(sliderElement, {
+        modules: [Navigation, Pagination],
+        direction: "horizontal",
+        loop: loop || false,
+        grabCursor: true,
+        slidesPerView: 2,
+        spaceBetween: 10,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        }
+      });
+    }, 200);
+
+    return () => clearTimeout(timeout);
+  }, [title, caption, loop, mediaUrl]);
 
   const setTitle = (value: string) => {
     setAttributes({ ...attributes, title: value });
@@ -119,14 +167,21 @@ export default function Edit({
       </InspectorControls>
 
       {/* Render the block in the editor */}
-      <div {...blockProps} className={`${blockProps.className} slider-block`}>
+      <div {...blockProps} ref={sliderBlockRef} className={`${blockProps.className} slider-block`}>
         <div className="slider-block__title">{title ? title : __("Slider", "slider")}</div>
-        <div className="slider-block__gallery">
-          {mediaUrl.map((url, index) => (
-            <div key={index} className="slider-block__gallery-item">
-              <img src={url} alt={`Image ${index + 1}`} />
-            </div>
-          ))}
+        {/* Swiper Container */}
+        <div className="swiper">
+          <div className="swiper-wrapper">
+            {mediaUrl.map((url, index) => (
+              <div key={index} className="swiper-slide">
+                <img src={url} alt={`Image ${index + 1}`} />
+              </div>
+            ))}
+          </div>
+          {/* Swiper Controls */}
+          <div className="swiper-pagination"></div>
+          <div className="swiper-button-next"></div>
+          <div className="swiper-button-prev"></div>
         </div>
         <div className="slider-block__caption">{caption ? caption : __("Caption", "slider")}</div>
       </div>

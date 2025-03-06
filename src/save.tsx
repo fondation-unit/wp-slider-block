@@ -11,7 +11,7 @@ export default function save({ attributes }: { attributes: BlockAttributes }) {
       })}
       data-slider-loop={loop}
     >
-      <div className="slider-block__title">Saved: {title}</div>
+      <div className="slider-block__title">{title}</div>
       <div className="slider-block__gallery swiper-wrapper">
         {mediaUrl.map((url, index) => (
           <div key={index} className="slider-block__gallery-item swiper-slide">
@@ -24,6 +24,7 @@ export default function save({ attributes }: { attributes: BlockAttributes }) {
       <div className="swiper-button-prev"></div>
       <div className="swiper-button-next"></div>
       <div className="swiper-scrollbar"></div>
+      <div className="slider-block__caption">{caption}</div>
     </div>
   );
 }
