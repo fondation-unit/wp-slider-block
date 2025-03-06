@@ -149,7 +149,7 @@ export default function Edit({
                     <div className="slider-bloc__media-gallery">
                       {mediaUrl.map((url, index) => (
                         <div key={index} className="slider-bloc__media-item">
-                          <img src={url} style={{ maxWidth: "100%", height: "auto" }} alt={`Image ${index + 1}`} />
+                          <img src={url} alt={`Image ${index + 1}`} />
                         </div>
                       ))}
                     </div>
@@ -171,9 +171,9 @@ export default function Edit({
         <div className="slider-block__title">{title ? title : __("Slider", "slider")}</div>
         {/* Swiper Container */}
         <div className="swiper">
-          <div className="swiper-wrapper">
+          <div className="slider-block__gallery swiper-wrapper">
             {mediaUrl.map((url, index) => (
-              <div key={index} className="swiper-slide">
+              <div key={index} className="slider-block__gallery-item swiper-slide">
                 <img src={url} alt={`Image ${index + 1}`} />
               </div>
             ))}

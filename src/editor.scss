@@ -3,13 +3,15 @@
  */
 
 .slider-block {
-  &__gallery {
-    display: flex;
-    flex-direction: row;
-    &-item {
-      img {
-        max-width: 300px;
-        height: auto;
+  .swiper {
+    .slider-block__gallery {
+      display: flex;
+      flex-direction: row;
+      &-item {
+        img {
+          max-width: 300px;
+          height: auto;
+        }
       }
     }
   }
