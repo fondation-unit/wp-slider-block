@@ -7,26 +7,27 @@
 
 ## Architecture
 
-This block uses static rendering. Thus, we don't rely on render.php to be responsible of the display.
+This block uses static rendering. Thus, we don't rely on [render.php](./src/render.php) to be responsible of the display.
 
 ```php
 echo wp_kses_post($content);
 ```
 
 It's the `save` function that stores the contents of the block in the database.
-So it's the [src/save.tsx](./src/save.tsx) that is responsible of producing the static rendering.
+So it's the [save.tsx](./src/save.tsx) that is responsible of producing the static rendering.
 
-Since we need to initialize swiper in the client, we rely on [src/view.ts](./src/view.ts) to do the business.
+Since we need to initialize swiper in the client (as it can't be done within the static data stored by the
+`save` function), we rely on [view.ts](./src/view.ts) to do the business.
 
 ## Development
 
 ### Block attributes
 
-To use new attributes in the block's editor, they must be declared in the [src/block.json](./src/block.json) file.
+To use new attributes in the block's editor, they must be declared in the [block.json](./src/block.json) file.
 
 ```json
 "attributes": {
-  // ...
+  /* ... */
 }
 ```
 
@@ -43,7 +44,7 @@ export default function Edit({
   setAttributes: (attributes: BlockAttributes) => void;
 }) {
   const blockProps = useBlockProps();
-  const { title, caption, mediaId, mediaUrl } = attributes;
+  const { title, caption, /* other attributes ... */ } = attributes;
 
   // ...
 ```
@@ -61,10 +62,10 @@ Set the block icon in `src/block.json` from an existing dashicon
 
 ```json
 {
-  // ...
+  /* ... */
   "category": "format",
   "icon": "format-gallery"
-  // ...
+  /* ... */
 }
 ```
 
